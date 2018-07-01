@@ -82,20 +82,20 @@ else if(settings=="3" || settings=="4"){
           break;
         }
         break;
-      
+
     case "4":
-      var distance = prompt("Please enter the distance to be travelled(miles).");
-      var efficiency= prompt("Please enter the fuel efficiency(mpg).");
-      var cost = prompt("Please enter cost per gallon (£/Gallon).");
-      var speed = prompt("Please enter the speed you will be travevling at(mph).");
+      var distance = parseFloat(prompt("Please enter the distance to be travelled(miles)."));
+      var efficiency= parseFloat(prompt("Please enter the fuel efficiency(mpg)."));
+      var cost = parseFloat(prompt("Please enter cost per gallon (£/Gallon)."));
+      var speed = parseFloat(prompt("Please enter the speed you will be travevling at(mph)."));
       var limit = 60;
       var totalCost;
       var fuel;
       var wastedFuel;
       var ineffective;
       // time
-
       var time = "Your trip will take " +(distance/speed)+ " hours, ";
+
       if(speed>0 && speed <=limit){
         fuel =(distance/efficiency);
       }else{
