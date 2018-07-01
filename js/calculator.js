@@ -5,13 +5,13 @@ var number2;
 var operation;
 var result;
 
-switch (settings) {
-  //Basic
-  case "1" :
-    number1 = parseInt(prompt("Please enter the first number. "));
-    number2 = parseInt(prompt("Please enter the second number. "));
-    operation = prompt("What do you want to do with these 2 numbers? Pick a number: 1-Addition, 2-Multiplication, 3-Division or 4-Subtraction.");
+number1 = parseInt(prompt("Please enter the first number. "));
+number2 = parseInt(prompt("Please enter the second number. "));
 
+switch (settings) {
+    //Basic
+  case "1" :
+    operation = prompt("What do you want to do with these 2 numbers? Pick a number: 1-Addition, 2-Multiplication, 3-Division or 4-Subtraction.");
     // operation=operation;
     alert(operation );
     // Pick a number: 1-Addition, 2-Multiplication, 3- Division, 4-Subtraction
@@ -37,9 +37,19 @@ switch (settings) {
       break;
     }
     break;
-
+    //Advanced
   case "2" :
-    alert("hello")
+    operation = prompt("What do you want to do with these 2 numbers? Pick a number: 1-Power, 2-square root");
+    switch (operation) {
+      case "1":
+        alert(number1+" to the power of "+ number2+ " is "+ Math.pow(number1,number2)+".");
+        break;
+      case "2":
+        alert("Square root of "+number1 +" is "+ Math.sqrt(number1)+", and the square root of "+number2+" is "+ Math.sqrt(number2));
+        break;
+      default:
+      alert("Please enter a valid code.");
+    }
     break;
 
   case "3" :
