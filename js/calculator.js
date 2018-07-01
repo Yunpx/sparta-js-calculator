@@ -1,4 +1,4 @@
-var settings= prompt("Which calculator do you what to use? Pick a number : 1- Basic, 2- Advanced, 3-BMI calculator.");
+var settings= prompt("Which calculator do you what to use? Pick a number : 1- Basic, 2- Advanced, 3-BMI calculator and 4-Trip calculator.");
 //1-Basic, 2-Advanced,3-BMI,4-Trip
 var number1;
 var number2;
@@ -80,10 +80,33 @@ else if(settings=="3" || settings=="4"){
         default:
           alert(errorcode);
           break;
-      }
-    case "4":
-
+        }
         break;
+      
+    case "4":
+      var distance = prompt("Please enter the distance to be travelled(miles).");
+      var efficiency= prompt("Please enter the fuel efficiency(mpg).");
+      var cost = prompt("Please enter cost per gallon (£/Gallon).");
+      var speed = prompt("Please enter the speed you will be travevling at(mph).");
+      var limit = 60;
+      var totalCost;
+      var fuel;
+      var wastedFuel;
+      var ineffective;
+      // time
+
+      var time = "Your trip will take " +(distance/speed)+ " hours, ";
+      if(speed>0 && speed <=limit){
+        fuel =(distance/efficiency);
+      }else{
+        ineffective = (speed-limit)*2;
+        wastedFuel = distance/ineffective;
+        fuel =(distance/efficiency);//effective fuel
+        fuel = Math.round(fuel + wastedFuel);//total fuel
+      }
+      totalCost= " and will cost £" + (cost*fuel)+" .";
+      alert(time+totalCost);
+      break;
 
     default:
       alert(errorcode);
